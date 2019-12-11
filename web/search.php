@@ -23,7 +23,7 @@
         <br>        
         <input type="submit" value="Search Event ID" class="button">
     </form>
-    <br>OR<br>
+    OR<br><br>
     <form>
     Search by Date Range: 
     <br>
