@@ -20,7 +20,9 @@
     </div>
     <h2>Search</h2>
     <form>
-        Search by Event ID: <input type="number" name="eventID" value=1001>
+        Search by Event ID: 
+        <br>
+        <input type="number" name="eventID" value=1001>
         <br>        
         <input type="submit" value="Search Event ID" class="button">
     </form>
