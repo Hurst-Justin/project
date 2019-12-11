@@ -20,7 +20,7 @@ h3 {
 b {
   font-size: 90%;
 }
-.table1 td,.table1 th {
+/* .table1 td,.table1 th {
   padding:8px 8px;
   display:table-cell;
   text-align:left;
@@ -34,7 +34,7 @@ b {
   display:table;
   border:1px solid #ccc;
   
-}
+} */
 
 /* .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
 .w3-bordered tr,.w3-table-all tr{border-bottom:1px solid #ddd}.w3-striped tbody tr:nth-child(even){background-color:#f1f1f1}

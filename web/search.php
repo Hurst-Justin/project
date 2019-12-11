@@ -8,6 +8,7 @@
     <head>
         <title>Incident Management System</title>
         <link rel="stylesheet" type="text/css" href="mystyles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
 
     <body>
@@ -44,7 +45,7 @@
         $stmt->bindValue(':eventID', $_GET['eventID'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo '<table class="table1">';
+        echo '<table class="table">';
             echo '<th>Event ID</th><th>Date Occurred</th><th>Short Description</th><th>Within Reporting Boundaries?</th>';
         foreach ($rows as $row)
         {
@@ -59,15 +60,7 @@
                 $reportingBoundary = "No";
             }
             
-            // echo '<p>';
-            // echo '<b>Event ID:</b>  ';
-            // echo '<a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a><br>';
-            // echo '<b>Date Occurred:</b>  ' . $dateOccurred->format('M d, Y').'<br>';
-            // echo '<b>Short Description:</b>  ' . $row['description_short'].'<br>';
-            // echo '<b>Within Reporting Boundaries?:</b>  ' . $reportingBoundary;'<br>';
-            // echo '</p>';
-
-            
+          
             echo '<tr><td><a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a></td><td>' . $dateOccurred->format('M d, Y').'</td><td>' . $row['description_short'].'</td><td>' . $reportingBoundary;'</td></tr>';
             
         }
@@ -80,7 +73,7 @@
         $stmt->bindValue(':endDate', $_GET['endDate'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo '<table class="table1">';
+        echo '<table class="table">';
         echo '<th>Event ID</th><th>Date Occurred</th><th>Short Description</th><th>Within Reporting Boundaries?</th>';
         foreach ($rows as $row)
         {
