@@ -61,9 +61,9 @@
             echo '</p>';
         }
     }
-    if (isset($_GET['startDate']) && isset($_GET['endDate']))
+    if (isset($_GET['startDate']))
     {
-        $stmt = $db->prepare('select * from events WHERE dateoccurred>=:startDate');
+        $stmt = $db->prepare('select * from events WHERE dateoccurred=:startDate');
         $stmt->bindValue(':startDate', $_GET['startDate'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
