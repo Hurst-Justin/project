@@ -19,12 +19,12 @@
     </div>
     <h2>Search</h2>
     <form>
-        Search by Event ID: <input type="number" name="eventID" value=1001 >        
+        Search by Event ID: <input type="number" name="eventID">        
         <input type="submit" value="Search Event ID" class="button">
     </form>
     <br>OR<br>
     <form>
-    Search by Date Range: <input type="date" name="startDate"><input type="date" name="endDate">
+    Search by Date Range: <input type="date" name="startDate" value="01/01/2019" required><input type="date" name="endDate" value="12/01/2019" required>
     <input type="submit" value="Search Date Range" class="button">
     </form>
 
@@ -32,6 +32,35 @@
     <?php
     
     // Search Event ID from Events
+    if (isset($_GET['eventID']))
+    {
+        $stmt = $db->prepare('select * from events WHERE event_id=:eventID');
+        $stmt->bindValue(':eventID', $_GET['eventID'], PDO::PARAM_INT);
+        $stmt->execute();
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($rows as $row)
+        {
+            $dateOccurred = new DateTime($row['date_occurred']);
+            $reportingBoundary = $row['reporting_boundary'];
+            if ($reportingBoundary == 1)
+            {
+                $reportingBoundary = "Yes";
+            }
+            else
+            {
+                $reportingBoundary = "No";
+            }
+            
+            echo '<p>';
+            echo '<b>EventID:</b>  ';
+            echo '<a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a><br>';
+            echo '<b>Date Occurred:</b>  ' . $dateOccurred->format('M d, Y').'<br>';
+            echo '<b>Short Description:</b>  ' . $row['description_short'].'<br>';
+            echo '<b>Within Reporting Boundaries?:</b>  ' . $reportingBoundary;'<br>';
+            echo '</p>';
+        }
+    }
     if (isset($_GET['eventID']))
     {
         $stmt = $db->prepare('select * from events WHERE event_id=:eventID');
