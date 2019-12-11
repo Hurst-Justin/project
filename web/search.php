@@ -19,7 +19,7 @@
     </div>
     <h2>Search</h2>
     <form>
-        Search by Event ID: <input type="number" name="eventID">
+        Search by Event ID: <input type="number" name="eventID" value=1001>
         <br>        
         <input type="submit" value="Search Event ID" class="button">
     </form>
@@ -44,7 +44,8 @@
         $stmt->bindValue(':eventID', $_GET['eventID'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        echo '<table>';
+            echo '<th>Event ID</th><th>Date Occurred</th><th>Short Description</th><th>Within Reporting Boundaries?</th>';
         foreach ($rows as $row)
         {
             $dateOccurred = new DateTime($row['date_occurred']);
@@ -66,10 +67,11 @@
             echo '<b>Within Reporting Boundaries?:</b>  ' . $reportingBoundary;'<br>';
             echo '</p>';
 
-            echo '<table>';
-            echo '<th>Event ID</th><th>Date Occurred</th><th>Short Description</th><th>Within Reporting Boundaries?</th>';
-            echo '</table>';
+            
+            echo '<tr><td><a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a></td><td>' . $dateOccurred->format('M d, Y').'</td><td>' . $row['description_short'].'</td><td>' . $reportingBoundary;'</td></tr>'
+            
         }
+        echo '</table>';
     }
     if (isset($_GET['startDate']))
     {
