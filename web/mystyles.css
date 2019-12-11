@@ -20,6 +20,7 @@ h3 {
 b {
   font-size: 90%;
 }
+.table1 td,.table1 th {padding:8px 8px;display:table-cell;text-align:left;vertical-align:top}
 .topnav {
     background: #009dd9;
     overflow: hidden;

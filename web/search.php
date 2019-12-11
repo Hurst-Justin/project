@@ -44,7 +44,7 @@
         $stmt->bindValue(':eventID', $_GET['eventID'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo '<table>';
+        echo '<table class="table1">';
             echo '<th>Event ID</th><th>Date Occurred</th><th>Short Description</th><th>Within Reporting Boundaries?</th>';
         foreach ($rows as $row)
         {
@@ -80,7 +80,7 @@
         $stmt->bindValue(':endDate', $_GET['endDate'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo '<table>';
+        echo '<table class="table1">';
         echo '<th>Event ID</th><th>Date Occurred</th><th>Short Description</th><th>Within Reporting Boundaries?</th>';
         foreach ($rows as $row)
         {
