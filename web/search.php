@@ -29,7 +29,7 @@
     <br>
     Start Date:<input type="date" name="startDate" value="2019-01-01" required>
     <br>
-    <!-- End Date:<input type="date" name="endDate" value='2019-12-01' required> -->
+    End Date:<input type="date" name="endDate" value='2019-12-01' required>
     <br>
     <input type="submit" value="Search Date Range" class="button">
     </form>
@@ -69,8 +69,9 @@
     }
     if (isset($_GET['startDate']))
     {
-        $stmt = $db->prepare('select * from events WHERE date_occurred>=:startDate');
+        $stmt = $db->prepare('select * from events WHERE date_occurred>=:startDate AND date_occurred<=:endDate');
         $stmt->bindValue(':startDate', $_GET['startDate'], PDO::PARAM_INT);
+        $stmt->bindValue(':endDate', $_GET['endDate'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
