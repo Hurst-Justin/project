@@ -24,7 +24,7 @@
     </form>
     <br>OR<br>
     <form>
-    Search by Date Range: <input type="date" name="startDate" value="01/01/2019" required><input type="date" name="endDate" value="12/01/2019" required>
+    Search by Date Range: <input type="date" name="startDate" value='01/01/2019' required><input type="date" name="endDate" value='12/01/201' required>
     <input type="submit" value="Search Date Range" class="button">
     </form>
 
