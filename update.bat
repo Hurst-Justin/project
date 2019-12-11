@@ -1,4 +1,4 @@
-C:\Users\jhurst\ProjectMain\main
+cd C:\Users\jhurst\ProjectMain\main
 git add --all
 git commit -m "Update Files"
 git push heroku master
