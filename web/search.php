@@ -19,12 +19,18 @@
     </div>
     <h2>Search</h2>
     <form>
-        Search by Event ID: <input type="number" name="eventID">        
+        Search by Event ID: <input type="number" name="eventID">
+        <br>        
         <input type="submit" value="Search Event ID" class="button">
     </form>
     <br>OR<br>
     <form>
-    Search by Date Range: <input type="date" name="startDate" value="2019-01-01" required><input type="date" name="endDate" value='2019-12-01' required>
+    Search by Date Range: 
+    <br>
+    Start Date:<input type="date" name="startDate" value="2019-01-01" required>
+    <br>
+    End Date:<input type="date" name="endDate" value='2019-12-01' required>
+    <br>
     <input type="submit" value="Search Date Range" class="button">
     </form>
 
