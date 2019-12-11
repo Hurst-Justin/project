@@ -23,15 +23,15 @@
         <br>        
         <input type="submit" value="Search Event ID" class="button">
     </form>
-    OR<br><br>
+    <br>OR<br><br>
     <form>
-    Search by Date Range: 
-    <br>
-    Start Date:<input type="date" name="startDate" value="2019-01-01" required>
-    <br>
-    End Date:<input type="date" name="endDate" value='2019-12-01' required>
-    <br>
-    <input type="submit" value="Search Date Range" class="button">
+        Search by Date Range: 
+        <br>
+        Start Date:<input type="date" name="startDate" value="2019-01-01" required>
+        <br>
+        End Date:<input type="date" name="endDate" value='2019-12-01' required>
+        <br>
+        <input type="submit" value="Search Date Range" class="button">
     </form>
 
     
@@ -59,12 +59,16 @@
             }
             
             echo '<p>';
-            echo '<b>EventID:</b>  ';
+            echo '<b>Event ID:</b>  ';
             echo '<a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a><br>';
             echo '<b>Date Occurred:</b>  ' . $dateOccurred->format('M d, Y').'<br>';
             echo '<b>Short Description:</b>  ' . $row['description_short'].'<br>';
             echo '<b>Within Reporting Boundaries?:</b>  ' . $reportingBoundary;'<br>';
             echo '</p>';
+
+            echo '<table>';
+            echo '<th>Event ID</th><th>Date Occurred</th><th>Short Description</th><th>Within Reporting Boundaries?</th>';
+            echo '</table>';
         }
     }
     if (isset($_GET['startDate']))
@@ -89,7 +93,7 @@
             }
             
             echo '<p>';
-            echo '<b>EventID:</b>  ';
+            echo '<b>Event ID:</b>  ';
             echo '<a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a><br>';
             echo '<b>Date Occurred:</b>  ' . $dateOccurred->format('M d, Y').'<br>';
             echo '<b>Short Description:</b>  ' . $row['description_short'].'<br>';
