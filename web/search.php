@@ -60,11 +60,8 @@
             else
             {
                 $reportingBoundary = "No";
-            }
-            
-          
+            }         
             echo '<tr><td><a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a></td><td>' . $dateOccurred->format('M d, Y').'</td><td>' . $row['description_short'].'</td><td>' . $reportingBoundary;'</td></tr>';
-            
         }
         echo '</table>';
     }
@@ -89,17 +86,7 @@
             {
                 $reportingBoundary = "No";
             }
-            
-            // echo '<p>';
-            // echo '<b>Event ID:</b>  ';
-            // echo '<a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a><br>';
-            // echo '<b>Date Occurred:</b>  ' . $dateOccurred->format('M d, Y').'<br>';
-            // echo '<b>Short Description:</b>  ' . $row['description_short'].'<br>';
-            // echo '<b>Within Reporting Boundaries?:</b>  ' . $reportingBoundary;'<br>';
-            // echo '</p>';
-
             echo '<tr><td><a href="event-details.php?event_id=' . $row['event_id'] . '">'. $row['event_id'].'</a></td><td>' . $dateOccurred->format('M d, Y').'</td><td>' . $row['description_short'].'</td><td>' . $reportingBoundary;'</td></tr>';
-            
         }
         echo '</table>';
     }
