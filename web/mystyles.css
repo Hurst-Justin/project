@@ -25,6 +25,7 @@ b {
   display:table-cell;
   text-align:left;
   vertical-align:top;
+  border-bottom:1px solid #ccc;
 }
 .table1 {
   border-collapse:collapse;
@@ -32,7 +33,7 @@ b {
   width:100%;
   display:table;
   border:1px solid #ccc;
-  border-bottom:1px solid #ccc;
+  
 }
 
 /* .w3-table,.w3-table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.w3-table-all{border:1px solid #ccc}
