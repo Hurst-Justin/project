@@ -1,0 +1,67 @@
+h1 {
+	font-size: 300%;
+    color:#009dd9;
+    font-family: "Georgia";
+}
+
+h2 {
+    font-size: 200%;
+    color:#009dd9;
+    font-family: "Georgia";
+}
+
+h3 {
+  font-size: 110%;
+  color:#009dd9;
+  font-family: "Georgia";
+  padding:0px;
+  margin-bottom: 2px;
+}
+b {
+  font-size: 90%;
+}
+.topnav {
+    background: #009dd9;
+    overflow: hidden;
+    margin-bottom: 10px;
+    font-family: "Georgia";
+  }
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav a:hover {
+    background-color: rgb(131, 131, 131);
+    color: white;
+  }
+  .topnav a.active {
+    background-color: rgb(194, 194, 194);
+    color: white;
+  }
+  .topnav a.active:hover {
+    background-color: rgb(131, 131, 131);
+    color: white;
+  }
+
+  .button {
+    background-color: rgb(255, 255, 255); 
+    color: rgb(160, 160, 160); 
+    border: 2px solid rgb(180, 180, 180);
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 7px;
+  }
+  .button:hover {
+    background-color: rgb(128, 128, 128);
+    color: white;
+  }
