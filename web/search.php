@@ -40,7 +40,7 @@
     // Search Event ID from Events
     if (isset($_GET['eventID']))
     {
-        $stmt = $db->prepare('select * from events WHERE event_id=:eventID');
+        $stmt = $db->prepare('select * from events WHERE event_id=:eventID ORDER BY date_occurred');
         $stmt->bindValue(':eventID', $_GET['eventID'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -69,7 +69,7 @@
     }
     if (isset($_GET['startDate']))
     {
-        $stmt = $db->prepare('select * from events WHERE date_occurred>=:startDate AND date_occurred<=:endDate');
+        $stmt = $db->prepare('select * from events WHERE date_occurred>=:startDate AND date_occurred<=:endDate ORDER BY date_occurred');
         $stmt->bindValue(':startDate', $_GET['startDate'], PDO::PARAM_INT);
         $stmt->bindValue(':endDate', $_GET['endDate'], PDO::PARAM_INT);
         $stmt->execute();
