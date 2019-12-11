@@ -29,7 +29,7 @@
     <br>
     Start Date:<input type="date" name="startDate" value="2019-01-01" required>
     <br>
-    End Date:<input type="date" name="endDate" value='2019-12-01' required>
+    <!-- End Date:<input type="date" name="endDate" value='2019-12-01' required> -->
     <br>
     <input type="submit" value="Search Date Range" class="button">
     </form>
