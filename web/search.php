@@ -95,7 +95,7 @@
     }
     if (isset($_GET['short_description']))
     {
-        $stmt = $db->prepare('select * from events WHERE CONTAINS(description_short, :short_description');
+        $stmt = $db->prepare('select * from events WHERE description_short LIKE %:short_description%');
         $stmt->bindValue(':short_description', $_GET['short_description'], PDO::PARAM_INT);
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
