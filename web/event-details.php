@@ -13,11 +13,9 @@
 
     <body>
     <h1>Incident Management System</h1>
-    <div class="topnav">
-        <a class="active" href="index.php">Home</a>
-        <a class="active" href="new.php">Create New Event</a>
-        <a class="active" href="search.php">Search</a>
-    </div>
+    <?php
+    require "navigation.php";
+    ?>
     <h2>Full Event Information</h2>
     <a href="search.php" class="button">Back</a>
     <h3>Event Details:</h3>
